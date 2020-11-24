@@ -11,7 +11,7 @@ async def on_ready():
 @client.command( pass_context = True)
 
 async def hello(ctx):
-    await ctx.send('Привет')
+    await ctx.send('Привет!')
 
 #Connect
 

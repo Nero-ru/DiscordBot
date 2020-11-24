@@ -1,5 +1,2 @@
-*.txt
-
-
-!/token.txt
-!/information.txt
+/token.txt
+/information.txt

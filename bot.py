@@ -1,20 +1,22 @@
 import discord
-from discord.ext import  commands
+import random
+from discord.ext import commands
+from config import settings
 
-client = commands.Bot(command_prefix = '!')
 
-@client.event
+bot = commands.Bot(command_prefix = settings['prefix'])
+
+@bot.event
 
 async def on_ready():
     print('BOT connected')
 
-@client.command( pass_context = True)
+@bot.command()
 
 async def hello(ctx):
-    await ctx.send('Привет!')
+    author = ctx.message.author
+    await ctx.send(f'{author.mention} Привет!')
+
 
 #Connect
-
-token = open ('token.txt', 'r').readline()
-
-client.run(token)
+bot.run(settings['token'])
